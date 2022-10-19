@@ -27,6 +27,9 @@ class LS {
         });
         this.setData("tasks", tasks);
     }
+    deleteTasks(){
+        localStorage.clear();
+    }
 }
 
 
