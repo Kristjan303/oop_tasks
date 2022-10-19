@@ -22,3 +22,4 @@ function deleteTask(e){
     task = task.textContent;
     ls.deleteTask(task);
 }
+
