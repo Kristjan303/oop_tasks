@@ -31,3 +31,4 @@ function deleteTasks(e){
     ui.deleteTasks(tasks);
     ls.deleteTasks();
 }
+

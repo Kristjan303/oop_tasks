@@ -9,3 +9,4 @@ class Task {
         console.log(this.name + ` is added to ls`);
     }
 }
+
