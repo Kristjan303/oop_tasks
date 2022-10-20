@@ -5,7 +5,7 @@ class Task {
     addedToUI(){
         console.log(this.name + ` is added yo ui`);
     }
-    addedToLs(){
+    addedToLS(){
         console.log(this.name + ` is added to ls`);
     }
 }

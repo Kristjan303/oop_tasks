@@ -1,15 +1,17 @@
 ui = new UI();
 ls = new LS();
 
-const form = document.querySelector("form");
-const taskInput = document.querySelector("#task");
-
-const taskList = document.querySelector("ul");
+//event elements
+const form = document.querySelector('form');
+const taskInput = document.querySelector('#task');
+const taskList = document.querySelector('ul');
 taskList.addEventListener("click", deleteTask);
+const clearBtn = document.querySelector('#del-tasks');
+clearBtn.addEventListener('click', deleteTasks)
+document.addEventListener("DOMContentLoaded", getTasks)
 
-const clearBtn = document.querySelector("#clear-tasks");
-clearBtn.addEventListener("click", deleteTask);
-
+//events
+//form submit event
 form.addEventListener("submit", addTask);
 
 function addTask(e) {
@@ -18,17 +20,18 @@ function addTask(e) {
     ls.addTask(task);
     e.preventDefault();
 }
-
-function deleteTask(e){
+function deleteTask(e) {
     let task = e.target.parentElement.firstChild;
     ui.deleteTask(task);
     task = task.textContent;
     ls.deleteTask(task);
 }
-
-function deleteTasks(e){
-    let tasks = document.querySelector("ul");
+function deleteTasks(e) {
+    let tasks = document.querySelector('ul');
     ui.deleteTasks(tasks);
     ls.deleteTasks();
 }
-
+function getTasks(e) {
+    tasks = ls.getData('tasks')
+    ui.getTasks(tasks)
+}
